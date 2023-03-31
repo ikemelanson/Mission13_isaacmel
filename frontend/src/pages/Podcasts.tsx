@@ -1,6 +1,7 @@
 function Podcasts() {
   return (
     <>
+      {/* podcasts page */}
       <h1>My Podcasts</h1>
       <p>
         Want to hear more about my movie opinions? Listen to my podcast:

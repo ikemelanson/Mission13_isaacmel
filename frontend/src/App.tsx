@@ -11,6 +11,7 @@ function App() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-nav">
+          {/* nav bar */}
           <Link className="nav-item nav-link" to="/">
             Home
           </Link>
@@ -24,9 +25,10 @@ function App() {
       </nav>
       <div className="container d-flex flex-column">
         <Routes>
+          {/* routes for the app */}
           <Route path="/" element={<Home />}></Route>
-          <Route path="/Movies" element={<Movies />}></Route>
-          <Route path="/Podcasts" element={<Podcasts />}></Route>
+          <Route path="/movies" element={<Movies />}></Route>
+          <Route path="/podcasts" element={<Podcasts />}></Route>
         </Routes>
       </div>
     </>

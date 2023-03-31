@@ -4,6 +4,7 @@ import joel from './Joel.jpg';
 function Home() {
   return (
     <>
+      {/* home page */}
       <h1>Home</h1>
       <p>
         This is a website that keeps track of Joel Hilton's awesome movie

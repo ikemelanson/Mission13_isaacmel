@@ -8,6 +8,7 @@ function Movies() {
       <h1>Movie Database</h1>
       <p>Here is a list of all the movies that I like!</p>
 
+      {/* generate a table displaying all the movies in the database */}
       <table className="table">
         <thead>
           <tr>

@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  // make all the routes for the app
   <React.StrictMode>
     <BrowserRouter>
       <App />
