@@ -1,8 +1,20 @@
-import movieData from '../data.json';
-
-const movieArray = movieData.MovieData;
+import { Movie } from '../types/movie';
+import { useEffect, useState } from 'react';
 
 function Movies() {
+  const [movieArray, setMovieData] = useState<Movie[]>([]);
+
+  //import data from api
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const response = await fetch('https://localhost:4000/movie');
+      const temp = await response.json();
+      setMovieData(temp);
+    };
+
+    fetchMovies();
+  }, []);
+
   return (
     <>
       <h1>Movie Database</h1>
@@ -17,18 +29,23 @@ function Movies() {
             <th>Year</th>
             <th>Director</th>
             <th>Rating</th>
+            <th>Lent To</th>
             <th>Edited</th>
+            <th>Notes</th>
           </tr>
         </thead>
         <tbody>
+          {/* generate each row in the table */}
           {movieArray.map((movie) => (
-            <tr>
-              <td>{movie.Category}</td>
-              <td>{movie.Title}</td>
-              <td>{movie.Year}</td>
-              <td>{movie.Director}</td>
-              <td>{movie.Rating}</td>
-              <td>{movie.Edited}</td>
+            <tr key={movie.movieId}>
+              <td>{movie.category}</td>
+              <td>{movie.title}</td>
+              <td>{movie.year}</td>
+              <td>{movie.director}</td>
+              <td>{movie.rating}</td>
+              <td>{movie.lentTo}</td>
+              <td>{movie.edited}</td>
+              <td>{movie.notes}</td>
             </tr>
           ))}
         </tbody>
